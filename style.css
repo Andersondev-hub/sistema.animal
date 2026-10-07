@@ -1,0 +1,76 @@
+/* Tema laranja da APDA - claro e escuro */
+:root {
+  --primaria: #ea580c; --primaria-escura: #c2410c;
+  --fundo: #fff7ed; --cartao: #ffffff; --texto: #1c1917; --suave: #78716c;
+  --borda: #fed7aa; --verde: #16a34a; --vermelho: #dc2626;
+}
+body.escuro {
+  --fundo: #1c1917; --cartao: #292524; --texto: #fafaf9; --suave: #a8a29e; --borda: #44403c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", system-ui, sans-serif; background: var(--fundo); color: var(--texto); }
+.oculto { display: none !important; }
+input, select, textarea { width: 100%; padding: 9px 10px; border: 1px solid var(--borda); border-radius: 8px; background: var(--cartao); color: var(--texto); font: inherit; margin-top: 4px; }
+label { display: block; font-size: 14px; margin-bottom: 10px; color: var(--suave); }
+.btn { border: 0; border-radius: 8px; padding: 9px 14px; cursor: pointer; font: inherit; background: var(--borda); color: var(--texto); }
+.btn.primario { background: var(--primaria); color: #fff; }
+.btn.primario:hover { background: var(--primaria-escura); }
+.btn.fantasma { background: transparent; }
+.btn.perigo { background: var(--vermelho); color: #fff; }
+.btn.pequeno { padding: 5px 9px; font-size: 13px; }
+.cartao { background: var(--cartao); border: 1px solid var(--borda); border-radius: 14px; padding: 18px; }
+
+/* Login */
+.login { min-height: 100vh; display: grid; place-items: center; padding: 20px; }
+.login-cartao { width: 100%; max-width: 380px; text-align: center; }
+.login-cartao label { text-align: left; }
+.login-cartao .btn { width: 100%; margin-top: 6px; }
+.logo { font-size: 48px; } .sub, .dica { color: var(--suave); font-size: 13px; }
+
+/* Layout */
+.app { display: flex; min-height: 100vh; }
+.menu { width: 230px; background: var(--cartao); border-right: 1px solid var(--borda); display: flex; flex-direction: column; padding: 14px; }
+.menu-topo { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; }
+.menu-topo small { display: block; color: var(--suave); }
+.logo-p { font-size: 28px; }
+#nav a { display: block; padding: 10px 12px; border-radius: 8px; color: var(--texto); text-decoration: none; margin-bottom: 2px; cursor: pointer; }
+#nav a.ativo { background: var(--primaria); color: #fff; }
+#nav a:hover:not(.ativo) { background: var(--fundo); }
+.menu-rodape { margin-top: auto; display: flex; justify-content: space-between; }
+.conteudo { flex: 1; padding: 18px; overflow-x: auto; }
+.barra { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.barra h2 { margin: 0; }
+body.menu-fechado .menu { display: none; }
+
+/* Componentes */
+.grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.indicador small { color: var(--suave); } .indicador b { display: block; font-size: 26px; color: var(--primaria); }
+.acoes { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+.acoes input, .acoes select { width: auto; margin: 0; }
+table { width: 100%; border-collapse: collapse; background: var(--cartao); border-radius: 12px; overflow: hidden; }
+th, td { padding: 9px 10px; border-bottom: 1px solid var(--borda); text-align: left; font-size: 14px; }
+th { background: var(--fundo); color: var(--suave); }
+.etiqueta { padding: 2px 8px; border-radius: 99px; font-size: 12px; background: var(--borda); }
+.entrada { color: var(--verde); } .saida { color: var(--vermelho); }
+.duas { display: grid; grid-template-columns: 1fr 1fr; gap: 0 12px; }
+
+/* Modal e toast */
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: grid; place-items: center; padding: 16px; z-index: 10; }
+.modal-caixa { background: var(--cartao); border-radius: 14px; padding: 18px; width: 100%; max-width: 560px; max-height: calc(100vh - 32px); overflow-y: auto; }
+.modal-topo { display: flex; justify-content: space-between; align-items: center; }
+.toast { position: fixed; bottom: 20px; right: 20px; background: var(--primaria); color: #fff; padding: 12px 18px; border-radius: 10px; z-index: 20; }
+
+@media (max-width: 760px) {
+  .menu { position: fixed; inset: 0 auto 0 0; z-index: 5; }
+  .duas { grid-template-columns: 1fr; }
+}
+
+/* Impressão do relatório */
+@media print {
+  .menu, .barra, .acoes, .nao-imprimir { display: none !important; }
+  body { background: #fff; color: #000; }
+  .conteudo { padding: 0; }
+  .cartao, table { border-color: #999; }
+}
+.assinaturas { display: flex; justify-content: space-around; margin-top: 60px; text-align: center; }
+.assinaturas div { border-top: 1px solid #000; padding-top: 6px; width: 40%; }

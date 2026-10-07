@@ -1,0 +1,23 @@
+SISTEMA APDA - AMIGOS PET DE SOLONÓPOLE (versão offline)
+=========================================================
+
+COMO ABRIR
+1. Mantenha os arquivos index.html, style.css e app.js na mesma pasta.
+2. Dê duplo clique em index.html (abre no navegador: Chrome, Edge, Firefox).
+3. Login: usuário "admin" e senha "admin123".
+
+NÃO PRECISA DE INTERNET NEM DE INSTALAR NADA.
+Os dados ficam salvos no próprio navegador (localStorage).
+Para voltar aos dados de exemplo, use o botão "Restaurar dados de exemplo" no Painel.
+
+MÓDULOS
+- Painel: resumo de sócios, animais, adoções, saldo do caixa e aniversariantes do mês.
+- Sócios: cadastro com categoria, inscrição, profissão, nascimento e observações.
+- Padrinhos: nome, nascimento, telefone, endereço e observações.
+- Animais: espécie, sexo, castração, situação.
+- Adoções: registro do adotante (nome, telefone, endereço).
+- Caixa: entradas e saídas por mês de referência e categoria.
+  "Taxa de sócios" puxa os sócios cadastrados; "Contribuição de padrinho" puxa os padrinhos.
+- Relatório: relatório do caixa por mês pronto para imprimir ou salvar em PDF.
+
+TECNOLOGIAS: HTML5, CSS3 e JavaScript puro (sem bibliotecas).

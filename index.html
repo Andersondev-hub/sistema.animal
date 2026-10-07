@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APDA - Amigos Pet de Solonópole</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tela de login -->
+  <section id="tela-login" class="login">
+    <form id="form-login" class="cartao login-cartao">
+      <div class="logo">🐾</div>
+      <h1>Amigos Pet de Solonópole</h1>
+      <p class="sub">Associação Protetora dos Animais - APDA</p>
+      <label>Usuário <input id="login-usuario" required autocomplete="username"></label>
+      <label>Senha <input id="login-senha" type="password" required autocomplete="current-password"></label>
+      <button class="btn primario" type="submit">Entrar</button>
+      <p class="dica">Acesso de demonstração: <b>admin</b> / <b>admin123</b></p>
+    </form>
+  </section>
+
+  <!-- Sistema -->
+  <section id="tela-app" class="app oculto">
+    <aside id="menu" class="menu">
+      <div class="menu-topo">
+        <span class="logo-p">🐾</span>
+        <div><b>Amigos Pet</b><small>de Solonópole</small></div>
+      </div>
+      <nav id="nav"></nav>
+      <div class="menu-rodape">
+        <button class="btn fantasma" id="btn-tema">🌓 Tema</button>
+        <button class="btn fantasma" id="btn-sair">Sair</button>
+      </div>
+    </aside>
+    <main class="conteudo">
+      <header class="barra">
+        <button class="btn fantasma" id="btn-menu">☰</button>
+        <h2 id="titulo-pagina">Painel</h2>
+      </header>
+      <div id="pagina"></div>
+    </main>
+  </section>
+
+  <!-- Janela modal genérica -->
+  <div id="modal" class="modal oculto">
+    <div class="modal-caixa">
+      <div class="modal-topo"><h3 id="modal-titulo"></h3><button class="btn fantasma" id="modal-fechar">✕</button></div>
+      <form id="modal-form"></form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast oculto"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
